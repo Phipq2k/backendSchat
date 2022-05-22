@@ -1,0 +1,42 @@
+#===========Name space=====================
+$$namespaces (url)
+1. action : http://localhost:5000/action
+2. chat: http://localhost:5000/chat
+
+
+
+
+#=========== Events sockets ===============
+$$ Server to client: Events Emit
+#Todo: Chat
+1. error => response errors
+2. notification => response disconnected time of user to single room that user was in it
+3. lastMessages => response chat rooms and last messages that user was owned
+4. messageClient => response messages to client
+5. showAllChatOnRoom => show all chat messages on user's room
+6. offlineTime => response user's offline time when user disconnected
+7. getUserByPhone => response User
+8. newRoom => response lastMessage
+9. messagesLoadMore => response message load more
+
+
+#Todo: Action
+1. onGetTaskById => response a task detail by id of user
+2. onGetAllTask => reponse the task list of user
+
+
+$$ Client to Server: Events On
+#Todo: Chat
+1. getListRoomForUser => request user id
+2. sendMessage => request ChatMessageDto
+3. chatSingle => request ChatWithAnotherUserDto{anotherUserId, ChatMessageDto}
+4. joinRoom => request chat room id,
+5. searchUserByPhone => phone: string. Ex: +84145678111
+6. singleRoom => request chat room
+7. chatGroup => request ChatRoomDto
+8. loadMoreMessages => request PaginateChatRoomDto
+#Todo: Action
+1. addTask => request TaskDto
+2. getAllTask => no request
+3. getTaskById => request task id
+4. deleteTask => request task id
